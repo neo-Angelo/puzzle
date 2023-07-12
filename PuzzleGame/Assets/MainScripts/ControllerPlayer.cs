@@ -8,7 +8,7 @@ public class ControllerPlayer : MonoBehaviour
 
     public void PickUpItem(GameObject item)
     {
-        Debug.Log("dentro do player kkkkkkkkkk ");
+        //Debug.Log("dentro do player : ");
         // Get the Item component from the picked-up item GameObject
         //Item itemComponent = item.GetComponent<Item>();
 
