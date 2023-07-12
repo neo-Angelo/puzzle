@@ -5,6 +5,7 @@ using UnityEngine;
 public class pickUpItem : MonoBehaviour
 {
     public GameObject ItemText;
+    public Item item;
        
        void Start()
     {
