@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class pickUpItem : MonoBehaviour
 {
+    public GameObject ItemText;
+       
+       void Start()
+    {
+        ItemText.SetActive(false);
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -11,9 +17,10 @@ public class pickUpItem : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            
+            ItemText.SetActive(true);
             if (Input.GetKey(KeyCode.E)) {
-                //Debug.Log("a tag e player: " + other.gameObject.name);
+                
+                ItemText.SetActive(false);
                 // Call a method in the player script to handle the item pickup
                 other.GetComponent<ControllerPlayer>().PickUpItem(gameObject);
 
@@ -22,5 +29,11 @@ public class pickUpItem : MonoBehaviour
             }
 
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        ItemText.SetActive(false);
+
     }
 }
